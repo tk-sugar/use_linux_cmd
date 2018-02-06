@@ -1,0 +1,11 @@
+# grep
+grep -v -e '^\s*#' -e '^\s*$' ファイル名 | less
+
+# ctags
+ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .
+
+# rails
+bundle exec rake db:migrate:down VERSION=timestamp
+
+# postgres
+psql -U prd_user -d mother -h [IP address]
