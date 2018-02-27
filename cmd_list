@@ -9,3 +9,9 @@ bundle exec rake db:migrate:down VERSION=timestamp
 
 # postgres
 psql -U prd_user -d mother -h [IP address]
+
+# all copy and name change
+for i in `ls .`; do cp $i `echo $i | sed "s/txt/dat/g"`; done
+
+# OR検索
+find G 'hoge\|fuga\|test'
