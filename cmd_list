@@ -15,3 +15,9 @@ for i in `ls .`; do cp $i `echo $i | sed "s/txt/dat/g"`; done
 
 # OR検索
 find G 'hoge\|fuga\|test'
+
+# mongoDBコマンド
+db.getCollection('pages').find({path :{$regex:'tksugar/memo'}})
+db.getCollection('pages').find({path :'tksugar/memo'})
+db.pages.update({path :{$regex: 'tksugar/memo'}}, {$set:{path :'/user/tksugar/memo'}})
+db.pages.update({path :'tksugar/memo'}, {$set:{path :'/user/tksugar/memo'}})
