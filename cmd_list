@@ -21,3 +21,6 @@ db.getCollection('pages').find({path :{$regex:'tksugar/memo'}})
 db.getCollection('pages').find({path :'tksugar/memo'})
 db.pages.update({path :{$regex: 'tksugar/memo'}}, {$set:{path :'/user/tksugar/memo'}})
 db.pages.update({path :'tksugar/memo'}, {$set:{path :'/user/tksugar/memo'}})
+
+# 複数vagrant up状態のプロビジョニング(itamae)
+itamae ssh -h 192.168.XX.10 -u vagrant -i /Users/tksugar/Vagrant/Itamae/.vagrant/machines/default/virtualbox/private_key ~/strumspace/strum/itamae/cookbooks/nginx/default.rb
