@@ -24,3 +24,9 @@ db.pages.update({path :'tksugar/memo'}, {$set:{path :'/user/tksugar/memo'}})
 
 # 複数vagrant up状態のプロビジョニング(itamae)
 itamae ssh -h 192.168.XX.10 -u vagrant -i /Users/tksugar/Vagrant/Itamae/.vagrant/machines/default/virtualbox/private_key ~/strumspace/strum/itamae/cookbooks/nginx/default.rb
+
+# shaping log
+less /var/www/log/hoge.log | grep 'search word' | awk '{print $13}' | sed "s/\"\|)://g"
+
+# search
+less /var/www/log/hoge.log | grep 'search word' | sort | uniq -c | sort -nr
